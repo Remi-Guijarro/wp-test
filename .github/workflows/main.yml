@@ -30,5 +30,8 @@ jobs:
       - name: Adding Known Hosts
         run: ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
       
+      - name: PWD 
+        run: pwd
+        
       - name: Deploy with rsync
         run: rsync -avz . ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/var/www/mon-courtier-francais/
