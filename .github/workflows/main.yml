@@ -31,4 +31,4 @@ jobs:
         run: ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
       
       - name: Deploy with rsync
-        run: rsync -avz ./dist/ root@212.227.142.211:/var/www/mon-courtier-francais/
+        run: rsync -avz ./dist/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/var/www/mon-courtier-francais/
