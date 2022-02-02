@@ -34,4 +34,4 @@ jobs:
         run: pwd && ls -la
         
       - name: Deploy with rsync
-        run: rsync -avzn ../../ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/
+        run: rsync -avzn "$(pwd -P)" ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/var/www/
