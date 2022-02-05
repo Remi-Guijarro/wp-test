@@ -367,6 +367,7 @@ html {
  */
 body {
 	margin: 0;
+	background-color: red; /* RED for testing purpose */
 }
 
 /**
