@@ -36,4 +36,4 @@ jobs:
         run: pwd && ls -la
         
       - name: Deploy with rsync
-        run: rsync -v "$(pwd -P)" ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/var/www/mon-courtier-francais/wp-content
+        run: rsync -av "$(pwd -P)" ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/var/www/mon-courtier-francais/wp-content
